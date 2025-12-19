@@ -20,7 +20,7 @@ class Student extends Teacher
 public class q1{
     public static void main(String[] args){
         Student s = new Student();
-       // Teacher t = new Teacher();             
+       // Teacher t = new Teacher(); //            
           s.work();
           s.work();
     }
