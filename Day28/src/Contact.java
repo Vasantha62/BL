@@ -1,4 +1,6 @@
-public class ContactPerson {
+import java.util.Objects;
+
+public class Contact {
     private String firstName;
     private String lastName;
     private String address;
@@ -8,7 +10,7 @@ public class ContactPerson {
     private String phoneNumber;
     private String email;
 
-    public ContactPerson(String firstName, String lastName, String address, String city, String state, String phoneNumber, String email) {
+    public Contact(String firstName, String lastName, String address, String city, String state, String phoneNumber, String email, String mail) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -35,6 +37,10 @@ public class ContactPerson {
         return state;
     }
 
+    public String getZip() {
+        return zip;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -55,14 +61,26 @@ public class ContactPerson {
         this.address = address;
     }
 
-    public void setPhoneNumber(String phoneNumber) {a
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
     @Override
     public  boolean equals(Object o){
         if(this== o) return true;
-        if(!(o instanceof ))
+        if(!(o instanceof Contact)) return false;
+        Contact contact = (Contact)o;
+        return firstName.equalsIgnoreCase(contact.firstName)&& lastName.equalsIgnoreCase(contact.lastName);
 
         }
+        @Override
+    public int hashCode(){
+        return Objects.hash(firstName.toLowerCase(), lastName.toLowerCase());
     }
+    @Override
+    public String toString() {
+        return firstName + " " + lastName + ", " + city + ", " + state +
+                ", Zip: " + zip + ", Phone: " + phoneNumber + ", Email: " + email;
+    }
+
+
 }
