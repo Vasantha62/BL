@@ -10,7 +10,6 @@ class Employee{
     }
 }
 
-
 public class EmployeeExample {
     public  static void main(String[] args){
         Employee emp = new Employee("vasantha" , 101);
