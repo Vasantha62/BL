@@ -1,7 +1,5 @@
 package main;
 
-
-
 import dao.AddressBookDAOImpl;
 import model.Contact;
 import service.AddressBookService;
