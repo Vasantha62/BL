@@ -1,5 +1,6 @@
 import java.util.function.Consumer;
 
+
 public class ConsumerwithInteger {
 
     public  static  void main(String[] args){
