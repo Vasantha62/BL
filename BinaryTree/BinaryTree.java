@@ -7,7 +7,6 @@ public class BinaryTree {
     public BinaryTree() {
     }
 
-
     private static class Node {
         int value;
         Node left;
@@ -48,8 +47,7 @@ public class BinaryTree {
             populate(scanner, node.right);
         }
     }
-
-
+    
     public void display() {
         display(root, "");
     }
