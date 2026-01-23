@@ -13,6 +13,7 @@ public class Main {
             return a / b;
         };
 
+
         showResult(10, 5, addition);      // Addition
         showResult(10, 5, subtraction);   // Subtraction
         showResult(10, 5, division);      // Division
