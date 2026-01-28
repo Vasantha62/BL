@@ -1,4 +1,4 @@
-// Read single digit number from command line
+
 const digit = parseInt(process.argv[2]);
 
 let word;
