@@ -1,6 +1,4 @@
-/**
- * UC3: Test adding Contacts to Address Book
- */
+
 
 const Contact = require("./Contact");
 const AddressBook = require("./AddressBook");
