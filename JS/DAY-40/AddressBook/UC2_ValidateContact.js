@@ -1,13 +1,10 @@
 
-/**
- * UC2: Test Contact Validation
- */
 
 const Contact = require("./Contact");
-
 try {
     let contact = new Contact(
         "Vasantha",
+        
         "Reddy",
         "MG Road",
         "Chennai",
