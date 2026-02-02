@@ -1,6 +1,3 @@
-/**
- * UC8: Search Person by City or State
- */
 
 const Contact = require("./Contact");
 const AddressBook = require("./AddressBook");
