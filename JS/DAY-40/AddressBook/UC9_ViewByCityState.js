@@ -1,6 +1,4 @@
-/**
- * UC9: View Persons by City or State
- */
+
 
 const Contact = require("./Contact");
 const AddressBook = require("./AddressBook");
