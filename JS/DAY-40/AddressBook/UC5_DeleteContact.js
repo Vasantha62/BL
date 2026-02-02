@@ -1,6 +1,3 @@
-/**
- * UC5: Delete Existing Contact
- */
 
 const Contact = require("./Contact");
 const AddressBook = require("./AddressBook");
