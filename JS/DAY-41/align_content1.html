@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flex Start Small Boxes</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+}
+
+
+.container {
+    width: 70%;                    
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    gap: 12px;                     
+    padding: 15px;
+    padding-bottom: 50px;
+
+    background: #9edb2d;
+    border-radius: 14px;
+}
+
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+
+.box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 6px;
+}
+
+
+.b1 { width: 35px; height: 35px; background: #f97316; }
+.b2 { width: 45px; height: 40px; background: #22c55e; }
+.b3 { width: 40px; height: 38px; background: #3b82f6; }
+
+.b4 { width: 38px; height: 42px; background: #ec4899; }
+.b5 { width: 48px; height: 36px; background: #facc15; color:#000; }
+.b6 { width: 44px; height: 46px; background: #8b5cf6; }
+.b7 { width: 36px; height: 40px; background: #14b8a6; }
+
+.b8 { width: 46px; height: 46px; background: #fb7185; }
+.b9 { width: 40px; height: 34px; background: #16a34a; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    
+    <div class="box b1">1</div>
+    <div class="box b2">2</div>
+    <div class="box b3">3</div>
+
+    <div class="break"></div>
+
+    
+    <div class="box b4">4</div>
+    <div class="box b5">5</div>
+    <div class="box b6">6</div>
+    <div class="box b7">7</div>
+
+    <div class="break"></div>
+
+    
+    <div class="box b8">8</div>
+    <div class="box b9">9</div>
+
+</div>
+
+</body>
+</html>
+
