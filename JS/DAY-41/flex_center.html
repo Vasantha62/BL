@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Center Boxes</title>
+
+<style>
+    body {
+        background-color: #f4f6f8;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        width: 800px;
+        height: 160px;
+        display: flex;
+        justify-content: center;   
+        align-items: center;       
+        gap: 18px;
+        padding: 20px;
+        margin: 50px auto;
+        background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .box {
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        border-radius: 14px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .box1 {
+        width: 100px;
+        background: linear-gradient(135deg, #f97316, #f59e0b);
+    }
+
+    .box2 {
+        width: 200px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+    }
+
+    .box3 {
+        width: 100px;
+        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="box box1">Box 1</div>
+    <div class="box box2">Box 2</div>
+    <div class="box box3">Box 3</div>
+</div>
+
+</body>
+</html>
