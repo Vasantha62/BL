@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Horizontal Boxes - Flex Spacing</title>
+
+<style>
+    body {
+        background-color: #f4f6f8;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container */
+    .container {
+        width: 80%;
+        height: 150px;
+        display: flex;
+        justify-content: space-around; /* <-- CHANGE THIS LINE to try different spacing: flex-start / center / flex-end / space-between / space-around / space-evenly */
+        align-items: center;
+        margin: 50px auto;
+        background: linear-gradient(135deg, #d232bd, #f472b6);
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        padding: 20px;
+    }
+
+    /* Common box styles */
+    .box1, .box2, .box3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: white;
+        border-radius: 12px;
+        height: 80px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
+
+    .box1:hover, .box2:hover, .box3:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Individual boxes */
+    .box1 {
+        width: 100px;
+        background: linear-gradient(135deg, #f97316, #f59e0b); /* orange */
+        border: 2px solid #ff4500;
+    }
+
+    .box2 {
+        width: 200px;
+        background: linear-gradient(135deg, #16a34a, #22c55e); /* green */
+        border: 2px solid #0f7a34;
+    }
+
+    .box3 {
+        width: 100px;
+        background: linear-gradient(135deg, #3b82f6, #0ea5e9); /* blue */
+        border: 2px solid #0a4db0;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+    <div class="box3">Box 3</div>
+</div>
+
+<!-- Instructions -->
+<div style="text-align:center; margin-top:20px; font-family:Arial;">
+    
+</div>
+
+</body>
+</html>
