@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Form Inputs with Validation</title>
+
+    <style>
+        body {
+            background: #f2f4f7;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container {
+            width: 420px;
+            background: #fff;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .range-value {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #43a047;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>HTML 5 FORM INPUT FIELDS</h1>
+
+<div class="form-container">
+    <form id="myForm">
+
+        <label>First Name</label>
+        <input type="text" id="name" placeholder="Eg: name">
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Eg: Abc@1234">
+
+        <label>Email</label>
+        <input type="text" id="email" placeholder="abc.xyz@bl.co.in">
+
+        <label>Website URL</label>
+        <input type="url" id="url" placeholder="https://example.com">
+
+        <label>Age</label>
+        <input type="number" id="age" placeholder="Enter age">
+
+        <label>Mobile Number</label>
+        <input type="tel" id="phone" placeholder="91 9919819801">
+
+        <label>Search</label>
+        <input type="search" placeholder="Search here...">
+
+        <label>Date & Time</label>
+        <input type="datetime-local">
+
+        <label>Salary Range</label>
+        <input type="range" id="salary" min="10000" max="100000" value="30000">
+        <div class="range-value">
+            Salary: ₹<span id="rangeValue">30000</span>
+        </div>
+
+        <div class="error" id="errorMsg"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById("myForm");
+    const salary = document.getElementById("salary");
+    const rangeValue = document.getElementById("rangeValue");
+    const errorMsg = document.getElementById("errorMsg");
+
+
+    const nameRegex = /^[A-Z][a-z]{2,}$/;
+    const emailRegex = /^[a-z]+(\.[a-z]+)?@[a-z]+\.[a-z]{2,}(\.[a-z]{2,})?$/;
+    const mobileRegex = /^91\s[0-9]{10}$/;
+
+    
+    salary.addEventListener("input", () => {
+        rangeValue.textContent = salary.value;
+    });
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        errorMsg.textContent = "";
+
+        const name = document.getElementById("name").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mobile = document.getElementById("phone").value.trim();
+
+        // First Name validation
+        if (!nameRegex.test(name)) {
+            errorMsg.textContent =
+                "First Name must start with Capital letter and have minimum 3 characters";
+            return;
+        }
+
+        // Email validation
+        if (!emailRegex.test(email)) {
+            errorMsg.textContent =
+                "Email must follow format abc.xyz@bl.co.in";
+            return;
+        }
+
+        // Mobile validation
+        if (!mobileRegex.test(mobile)) {
+            errorMsg.textContent =
+                "Mobile number must be in format: 91 9919819801";
+            return;
+        }
+
+        // Password validation
+        const specialCharCount =
+            password.replace(/[A-Za-z0-9]/g, "").length;
+
+        if (password.length < 8) {
+            errorMsg.textContent =
+                "Password must have minimum 8 characters";
+            return;
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            errorMsg.textContent =
+                "Password must contain at least 1 uppercase letter";
+            return;
+        }
+
+        if (!/[0-9]/.test(password)) {
+            errorMsg.textContent =
+                "Password must contain at least 1 numeric digit";
+            return;
+        }
+
+        if (specialCharCount !== 1) {
+            errorMsg.textContent =
+                "Password must contain exactly 1 special character";
+            return;
+        }
+
+        alert("Form submitted successfully ");
+        form.reset();
+        rangeValue.textContent = "30000";
+    });
+</script>
+
+</body>
+</html>
