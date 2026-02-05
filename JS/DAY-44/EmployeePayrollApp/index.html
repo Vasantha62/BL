@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Payroll</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+
+<div class="card">
+    <h2>Employee Payroll Form</h2>
+
+    <label>Name</label>
+    <input type="text" id="name">
+    <small id="nameError"></small>
+
+    <label>Gender</label>
+    <div class="inline">
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+    </div>
+
+    <label>Department</label>
+    <div class="inline">
+        <input type="checkbox" value="HR"> HR
+        <input type="checkbox" value="IT"> IT
+        <input type="checkbox" value="Sales"> Sales
+    </div>
+
+    <label>Profile Picture</label>
+    <div class="profile">
+        <label>
+            <input type="radio" name="profile" value="images/pic1.jpg">
+            <img src="images/pic1.jpg">
+        </label>
+        <label>
+            <input type="radio" name="profile" value="images/pic2.jpeg">
+            <img src="images/pic4.jpeg">
+        </label>
+        <label>
+            <input type="radio" name="profile" value="images/pic3.jpg">
+            <img src="images/pic3.jpg">
+        </label>
+    </div>
+
+    <label>Salary</label>
+    <input type="range" id="salary" min="10000" max="100000" step="5000">
+    <div>₹ <span id="salaryValue"></span></div>
+
+    <label>Start Date</label>
+    <input type="date" id="startDate">
+    <small id="dateError"></small>
+
+    <label>Notes</label>
+    <textarea id="notes"></textarea>
+
+    <div class="buttons">
+        <button id="saveBtn">Save</button>
+        <button type="reset" id="resetBtn">Reset</button>
+    </div>
+</div>
+
+<div class="table-card">
+    <h2>Saved Employees</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Date</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="empTable"></tbody>
+    </table>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
+
